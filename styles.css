@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  position: absolute;
+  top: 50px;
+  z-index: 100;
+  width: 100%;
+  /* display: none; */
+}
+
+@media (min-width: 768px) {
+  header {
+    width: fit-content;
+    left: 50px;
+  }
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  header nav {
+    gap: 50px;
+  }
+}
+
+nav .hamburger-icon {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  nav .hamburger-icon {
+    display: none;
+  }
+}
+
+nav .logo {
+  margin: 0 auto;
+}
+
+.close-btn {
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .close-btn {
+    display: none;
+  }
+}
+
+.nav-menu {
+  list-style: none;
+  background-color: white;
+  position: fixed;
+  top: -100%;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  width: 100vw;
+  color: black;
+  padding: 50px 30px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: top 350ms ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .nav-menu {
+    position: static;
+    width: fit-content;
+    background-color: transparent;
+    color: white;
+    padding: 0;
+    font-weight: 500;
+  }
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .backdrop {
+    display: none;
+  }
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .top-section {
+    grid-template-columns: 60% 40%;
+    height: 70vh;
+    max-height: 420px;
+  }
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 50vh;
+  max-height: 420px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .img-wrapper {
+    height: 100%;
+  }
+}
+
+.img-slides {
+  display: grid;
+  grid-template-columns: repeat(3, 100%);
+  /* display: flex; */
+  width: 100%;
+  height: 100%;
+  transition: transform 500ms linear;
+}
+
+img-slides picture {
+  width: 100%;
+  height: 100%;
+  /* flex-shrink: 0; */
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}  
+
+.text-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.text-slides {
+  display: grid;
+  grid-template-columns: repeat(3, 100%);
+  height: 100%;
+  /* transition: transform 500ms linear; */
+} 
+
+.text-content {
+  /* padding: 50px 20px; */
+  padding: 50px clamp(20px, 5vw, 100px);
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .text-content {
+    padding: 0 clamp(20px, 5vw, 100px);
+  }
+}
+
+.text-content h1 {
+  font-size: 2.5rem;
+}
+
+.text-content p {
+  margin: 20px 0;
+  color: hsl(0, 0%, 63%);
+  line-height: 1.3;
+}
+
+.shop-now-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 10px;
+}
+
+.slide-btns {
+  position: absolute;
+  z-index: 3 ;
+  display: flex;
+  align-items: center;
+}
+
+.slide-btns.mobile-btns {
+  bottom: 0;
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .slide-btns.mobile-btns {
+    display: none;
+  }
+}
+
+.slide-btns.desktop-btns {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .slide-btns.desktop-btns {
+    bottom: 0;
+    left: 0;
+    display: flex;
+  }
+}
+
+.slide-btns .btn {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(0, 0%, 0%);
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.slide-btns .btn:hover {
+  background-color: hsl(0, 0%, 27%);
+}
+
+.bottom-section {
+  display: grid;
+}
+
+@media (min-width: 768px) {
+  .bottom-section {
+    grid-template-columns: 30% 40% 30%;
+  }
+}
+
+.bottom-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text-wrapper {
+  padding: 50px 20px;
+}
+
+@media (min-width: 768px) {
+  .about-text-wrapper {
+    padding: 50px;
+  }
+}
+
+.about-text-wrapper h2 {
+  font-size: 1.2rem;
+  letter-spacing: 7px;
+  line-height: 1.5;
+}
+
+.about-text-wrapper p {
+  margin: 20px 0;
+  color: hsl(0, 0%, 63%);
+  line-height: 1.3;
+}
