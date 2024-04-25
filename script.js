@@ -56,12 +56,12 @@ prevButtons.forEach((prevButton) => {
 })
 
 hamburgerIcon.addEventListener("click", () => {
-    navMenu.style.top = "0px"
+    navMenu.style.left = "0px"
     backdrop.style.display = "block"
 })
 
 function closeMenu() {
-    navMenu.style.top = "-100%"
+    navMenu.style.left = "-100%"
     backdrop.style.display = "none"
 }
 
